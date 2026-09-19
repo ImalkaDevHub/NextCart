@@ -1,9 +1,9 @@
-<!DOCTYPE html>
+﻿<!DOCTYPE html>
 <html xmlns:th="http://www.thymeleaf.org">
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Create Account | ApexCart</title>
+    <title>Create Account | NextCart</title>
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css">
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.1/css/all.min.css">
     <link rel="stylesheet" th:href="@{/css/style.css}">
@@ -19,7 +19,7 @@
                 <div class="text-center mb-4">
                     <i class="fas fa-user-plus text-primary fa-3x mb-3"></i>
                     <h3 class="fw-bold">Create an Account</h3>
-                    <p class="text-secondary small">Join ApexCart for personalized recommendations and instant checkout</p>
+                    <p class="text-secondary small">Join NextCart for personalized recommendations and instant checkout</p>
                 </div>
 
                 <div th:replace="~{fragments/alerts :: alerts}"></div>
@@ -40,12 +40,12 @@
                     <div class="row g-3 mb-3">
                         <div class="col-md-6">
                             <label for="password" class="form-label text-secondary fw-semibold">Password *</label>
-                            <input type="password" id="password" th:field="*{password}" class="form-control bg-transparent text-light border-secondary" placeholder="••••••••" required>
+                            <input type="password" id="password" th:field="*{password}" class="form-control bg-transparent text-light border-secondary" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required>
                             <small class="text-danger" th:if="${#fields.hasErrors('password')}" th:errors="*{password}"></small>
                         </div>
                         <div class="col-md-6">
                             <label for="confirmPassword" class="form-label text-secondary fw-semibold">Confirm Password *</label>
-                            <input type="password" id="confirmPassword" th:field="*{confirmPassword}" class="form-control bg-transparent text-light border-secondary" placeholder="••••••••" required>
+                            <input type="password" id="confirmPassword" th:field="*{confirmPassword}" class="form-control bg-transparent text-light border-secondary" placeholder="â€¢â€¢â€¢â€¢â€¢â€¢â€¢â€¢" required>
                             <small class="text-danger" th:if="${#fields.hasErrors('confirmPassword')}" th:errors="*{confirmPassword}"></small>
                         </div>
                     </div>
@@ -77,3 +77,4 @@
 <script th:src="@{/js/main.js}"></script>
 </body>
 </html>
+

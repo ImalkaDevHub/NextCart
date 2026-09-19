@@ -1,10 +1,10 @@
-# ApexCart - Spring Boot 3 Enterprise E-Commerce Platform
+﻿# NextCart - Spring Boot 3 Enterprise E-Commerce Platform
 
 A production-ready, full-stack E-Commerce Web Application built with **Java 21**, **Spring Boot 3.2**, **Spring Security 6**, **Spring Data JPA**, **Thymeleaf**, **Bootstrap 5**, and **MySQL/H2**.
 
 ---
 
-## 🌟 Key Features
+## ðŸŒŸ Key Features
 
 ### Customer Portal
 - **User Authentication & Security**: Secure registration, login, session management, BCrypt password hashing, and role-based access control.
@@ -26,7 +26,7 @@ A production-ready, full-stack E-Commerce Web Application built with **Java 21**
 
 ---
 
-## 🛠️ Technology Stack
+## ðŸ› ï¸ Technology Stack
 
 | Layer | Technology |
 | :--- | :--- |
@@ -37,7 +37,7 @@ A production-ready, full-stack E-Commerce Web Application built with **Java 21**
 
 ---
 
-## 🔑 Demo Credentials
+## ðŸ”‘ Demo Credentials
 
 | Role | Email | Password | Access Level |
 | :--- | :--- | :--- | :--- |
@@ -46,46 +46,46 @@ A production-ready, full-stack E-Commerce Web Application built with **Java 21**
 
 ---
 
-## 📁 Project Architecture & Directory Structure
+## ðŸ“ Project Architecture & Directory Structure
 
 ```
 d:/180_Days/Projects/E-commers_App/
-├── pom.xml
-├── schema.sql
-├── README.md
-└── src/
-    └── main/
-        ├── java/com/ecommerce/app/
-        │   ├── config/              # DataInitializer & App Configurations
-        │   ├── controller/          # Spring MVC Web Controllers (Public & Admin)
-        │   ├── dto/                 # Data Transfer Objects & Forms
-        │   ├── entity/              # JPA Domain Entities & Enums
-        │   ├── exception/           # Global Exception Handler & Custom Errors
-        │   ├── repository/          # Spring Data JPA Repositories
-        │   ├── security/            # Spring Security Filter Chain & Handlers
-        │   ├── service/             # Business Logic Interfaces
-        │   │   └── impl/            # Business Logic Implementations
-        │   └── util/                # File Upload & Utility Classes
-        └── resources/
-            ├── application.properties
-            ├── static/
-            │   ├── css/style.css    # Glassmorphism & Theme Variables
-            │   └── js/main.js       # Live Search, Theme Switcher & AJAX
-            └── templates/
-                ├── admin/           # Admin Dashboard & Management Templates
-                ├── auth/            # Login, Register, Forgot Password
-                ├── cart/            # Shopping Cart Templates
-                ├── checkout/        # Checkout & Payment Simulation
-                ├── error/           # Custom 404, 403, 500 Error Pages
-                ├── fragments/       # Navbar, Footer, Alerts
-                ├── pages/           # About, Contact, FAQ, Terms
-                ├── product/         # Catalog List & Detail Pages
-                └── user/            # User Profile, Orders, Wishlist, Invoice
+â”œâ”€â”€ pom.xml
+â”œâ”€â”€ schema.sql
+â”œâ”€â”€ README.md
+â””â”€â”€ src/
+    â””â”€â”€ main/
+        â”œâ”€â”€ java/com/ecommerce/app/
+        â”‚   â”œâ”€â”€ config/              # DataInitializer & App Configurations
+        â”‚   â”œâ”€â”€ controller/          # Spring MVC Web Controllers (Public & Admin)
+        â”‚   â”œâ”€â”€ dto/                 # Data Transfer Objects & Forms
+        â”‚   â”œâ”€â”€ entity/              # JPA Domain Entities & Enums
+        â”‚   â”œâ”€â”€ exception/           # Global Exception Handler & Custom Errors
+        â”‚   â”œâ”€â”€ repository/          # Spring Data JPA Repositories
+        â”‚   â”œâ”€â”€ security/            # Spring Security Filter Chain & Handlers
+        â”‚   â”œâ”€â”€ service/             # Business Logic Interfaces
+        â”‚   â”‚   â””â”€â”€ impl/            # Business Logic Implementations
+        â”‚   â””â”€â”€ util/                # File Upload & Utility Classes
+        â””â”€â”€ resources/
+            â”œâ”€â”€ application.properties
+            â”œâ”€â”€ static/
+            â”‚   â”œâ”€â”€ css/style.css    # Glassmorphism & Theme Variables
+            â”‚   â””â”€â”€ js/main.js       # Live Search, Theme Switcher & AJAX
+            â””â”€â”€ templates/
+                â”œâ”€â”€ admin/           # Admin Dashboard & Management Templates
+                â”œâ”€â”€ auth/            # Login, Register, Forgot Password
+                â”œâ”€â”€ cart/            # Shopping Cart Templates
+                â”œâ”€â”€ checkout/        # Checkout & Payment Simulation
+                â”œâ”€â”€ error/           # Custom 404, 403, 500 Error Pages
+                â”œâ”€â”€ fragments/       # Navbar, Footer, Alerts
+                â”œâ”€â”€ pages/           # About, Contact, FAQ, Terms
+                â”œâ”€â”€ product/         # Catalog List & Detail Pages
+                â””â”€â”€ user/            # User Profile, Orders, Wishlist, Invoice
 ```
 
 ---
 
-## 🚀 Installation & Setup Instructions
+## ðŸš€ Installation & Setup Instructions
 
 ### Prerequisites
 - **Java 21 JDK** installed and configured in system `PATH`.
@@ -94,8 +94,8 @@ d:/180_Days/Projects/E-commers_App/
 
 ### Step 1: Clone Repository
 ```bash
-git clone https://github.com/Madhan-213/E-Commerce_Application.git
-cd E-Commerce_Application
+git clone https://github.com/Madhan-213/NextCart.git
+cd NextCart
 ```
 
 ### Step 2: Running with Default H2 Database
@@ -121,7 +121,7 @@ To use a production MySQL server:
 
 ---
 
-## 🧪 Verification & Testing
+## ðŸ§ª Verification & Testing
 
 - Access H2 Console at `http://localhost:8080/h2-console` (JDBC URL: `jdbc:h2:mem:ecommerce_db`, Username: `sa`, Password: leave empty).
 - Test placing orders with simulated COD and instant Credit Card/UPI options.
@@ -129,5 +129,6 @@ To use a production MySQL server:
 
 ---
 
-## 📄 License
+## ðŸ“„ License
 This project is licensed under the MIT License - feel free to use it for portfolio evaluations, placement showcases, and learning!
+
