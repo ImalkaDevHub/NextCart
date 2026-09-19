@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html xmlns:th="http://www.thymeleaf.org" xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
+<body>
+
+<nav th:fragment="navbar" class="navbar navbar-expand-lg sticky-top navbar-custom py-3">
+    <div class="container">
+        <!-- Brand Logo -->
+        <a class="navbar-brand d-flex align-items-center me-4" href="/">
+            <i class="fas fa-shopping-bag text-primary me-2 fa-lg"></i>
+            <span class="fs-4 brand-gradient">ApexCart</span>
+        </a>
+
+        <!-- Search Bar with Live Suggestions -->
+        <div class="position-relative flex-grow-1 max-w-md mx-lg-4 d-none d-md-block" style="max-width: 450px;">
+            <form action="/products" method="GET" class="d-flex position-relative">
+                <input id="searchInput" type="search" name="keyword" class="form-control rounded-pill pe-5 border-secondary bg-transparent text-light" placeholder="Search tech, watches, apparel..." th:value="${filter != null ? filter.keyword : ''}" autocomplete="off">
+                <button type="submit" class="btn text-secondary position-absolute end-0 top-50 translate-middle-y me-2 border-0 bg-transparent">
+                    <i class="fas fa-search"></i>
+                </button>
+            </form>
+            <div id="searchSuggestionsBox" class="search-suggestions-box"></div>
+        </div>
+
+        <button class="navbar-toggler border-0" type="button" data-bs-toggle="collapse" data-bs-target="#navbarContent">
+            <i class="fas fa-bars text-light"></i>
+        </button>
+
+        <div class="collapse navbar-collapse" id="navbarContent">
+            <ul class="navbar-nav ms-auto align-items-center gap-2">
+                <li class="nav-item">
+                    <a class="nav-link text-light fw-medium" href="/products"><i class="fas fa-grid-2 me-1"></i> Catalog</a>
+                </li>
+                <li class="nav-item" sec:authorize="hasRole('ADMIN')">
+                    <a class="nav-link text-warning fw-semibold" href="/admin/dashboard">
+                        <i class="fas fa-chart-line me-1"></i> Admin Panel
+                    </a>
+                </li>
+
+                <!-- Wishlist -->
+                <li class="nav-item" sec:authorize="isAuthenticated()">
+                    <a class="nav-link text-light" href="/wishlist" title="Wishlist">
+                        <i class="far fa-heart fa-lg"></i>
+                    </a>
+                </li>
+
+                <!-- Cart Icon -->
+                <li class="nav-item me-2">
+                    <a class="nav-link text-light position-relative" href="/cart">
+                        <i class="fas fa-shopping-cart fa-lg"></i>
+                        <span id="cartBadgeCount" class="position-absolute top-0 start-100 translate-middle badge rounded-pill bg-primary" th:text="${session.cartCount != null ? session.cartCount : '0'}">0</span>
+                    </a>
+                </li>
+
+                <!-- Light/Dark Theme Toggle Button -->
+                <li class="nav-item me-3">
+                    <button id="themeToggleBtn" class="theme-toggle-btn" title="Toggle Theme">
+                        <i id="themeIcon" class="fas fa-sun text-warning"></i>
+                    </button>
+                </li>
+
+                <!-- User Dropdown / Login -->
+                <li class="nav-item" sec:authorize="isAnonymous()">
+                    <a class="btn btn-outline-light rounded-pill px-4 me-2" href="/login">Login</a>
+                    <a class="btn btn-gradient px-4" href="/register">Register</a>
+                </li>
+
+                <li class="nav-item dropdown" sec:authorize="isAuthenticated()">
+                    <a class="nav-link dropdown-toggle text-light d-flex align-items-center gap-2" href="#" id="userDropdown" role="button" data-bs-toggle="dropdown">
+                        <div class="rounded-circle bg-primary text-white d-flex align-items-center justify-content-center" style="width: 36px; height: 36px; font-weight: 600;">
+                            <span sec:authentication="name != null ? #strings.substring(name, 0, 1).toUpperCase() : 'U'">U</span>
+                        </div>
+                        <span sec:authentication="name">User</span>
+                    </a>
+                    <ul class="dropdown-menu dropdown-menu-end glass-card shadow-lg p-2" aria-labelledby="userDropdown">
+                        <li><a class="dropdown-item rounded py-2" href="/profile"><i class="fas fa-user-circle me-2 text-primary"></i> Profile</a></li>
+                        <li><a class="dropdown-item rounded py-2" href="/orders"><i class="fas fa-box me-2 text-success"></i> My Orders</a></li>
+                        <li><a class="dropdown-item rounded py-2" href="/wishlist"><i class="fas fa-heart me-2 text-danger"></i> Wishlist</a></li>
+                        <li sec:authorize="hasRole('ADMIN')"><hr class="dropdown-divider"></li>
+                        <li sec:authorize="hasRole('ADMIN')"><a class="dropdown-item rounded py-2 text-warning" href="/admin/dashboard"><i class="fas fa-tachometer-alt me-2"></i> Admin Panel</a></li>
+                        <li><hr class="dropdown-divider"></li>
+                        <li>
+                            <form action="/logout" method="POST" class="d-inline">
+                                <input type="hidden" th:name="${_csrf.parameterName}" th:value="${_csrf.token}"/>
+                                <button type="submit" class="dropdown-item rounded py-2 text-danger w-100 border-0 bg-transparent text-start">
+                                    <i class="fas fa-sign-out-alt me-2"></i> Logout
+                                </button>
+                            </form>
+                        </li>
+                    </ul>
+                </li>
+            </ul>
+        </div>
+    </div>
+</nav>
+
+</body>
+</html>
