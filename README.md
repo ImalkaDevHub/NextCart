@@ -1,6 +1,8 @@
-# ApexCart - Spring Boot 3 Enterprise E-Commerce Platform
+# NextCart - Spring Boot 3 Enterprise E-Commerce Platform
 
-A production-ready, full-stack E-Commerce Web Application built with **Java 21**, **Spring Boot 3.2**, **Spring Security 6**, **Spring Data JPA**, **Thymeleaf**, **Bootstrap 5**, and **MySQL/H2**.
+NextCart is a Java-based E-Commerce Shopping System developed as a 2nd-year university project. The system provides a simple and efficient platform for customers to browse products, manage their shopping cart, and place orders.
+
+The project was developed to gain practical experience in Java application development, database management, object-oriented programming, and software engineering concepts. **Java 21**, **Spring Boot 3.2**, **Spring Security 6**, **Spring Data JPA**, **Thymeleaf**, **Bootstrap 5**, and **MySQL/H2**.
 
 ---
 
@@ -131,3 +133,9 @@ To use a production MySQL server:
 
 ## 📄 License
 This project is licensed under the MIT License - feel free to use it for portfolio evaluations, placement showcases, and learning!
+
+👨‍💻 Developer
+
+Imalka Madushan
+
+IT / ICT Undergraduate | Full-Stack Developer
